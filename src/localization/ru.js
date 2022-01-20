@@ -1,3 +1,3 @@
 export default {
-  diagnostics_intro: "Диагностика с автоматической регистрацией",
+  get_diagnostics: "ПОЛУЧИТЬ ДИАГНОСТИКУ",
 };

@@ -1,26 +1,17 @@
 import React from "react";
-import { Text, Button, View } from "react-native";
-import { LocalizationContext } from "../../App";
+import {Text, View} from "react-native";
+import {LocalizationContext} from "../../App";
+import Button from "../components/Button/Button";
+import {appView, rootContainer} from "../global-styles";
 
-function WelcomeScreen({ navigation }) {
-  const { t, locale, setLocale } = React.useContext(LocalizationContext);
-  return (
-    <View>
-      <Text>{t("diagnostics_intro")}</Text>
-      <Button
-        title={"to russian"}
-        onPress={() => {
-          setLocale("ru");
-        }}
-      />
-      <Button
-        title={"Go to Login"}
-        onPress={() => {
-          navigation.navigate("Login");
-        }}
-      />
-    </View>
-  );
+function WelcomeScreen({navigation}) {
+    const {t, locale, setLocale} = React.useContext(LocalizationContext);
+    return (
+        <View style={appView}>
+            sdfsd
+            <Button text={t("get_diagnostics")}/>
+        </View>
+    );
 }
 
 export default WelcomeScreen;
