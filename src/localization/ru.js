@@ -1,3 +1,8 @@
 export default {
-  get_diagnostics: "ПОЛУЧИТЬ ДИАГНОСТИКУ",
+  login: "Войти",
+  signup: "Регистрация",
+  getDiagnostics: "ПОЛУЧИТЬ ДИАГНОСТИКУ",
+  welcomeScreen: {
+    welcomeText: "Диагностика с автоматической регистрацией",
+  },
 };

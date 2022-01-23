@@ -1,3 +1,8 @@
 export default {
-  get_diagnostics: "get diagnostics",
+  login: "Log In",
+  signup: "Sign Up",
+  getDiagnostics: "Get Diagnostics",
+  welcomeScreen: {
+    welcomeText: "Diagnostics with automatic sign up",
+  },
 };

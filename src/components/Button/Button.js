@@ -1,14 +1,21 @@
-import React from 'react';
-import {Pressable, Text} from "react-native";
-import {commonBtn, commonBtnText} from "./style";
+import React from "react";
+import { Pressable, Text } from "react-native";
+import { commonBtn, commonBtnText } from "./style";
 
-
-function Button({text = 'welcome'}) {
-    return (
-        <Pressable style={commonBtn}>
-            <Text style={commonBtnText}>{text}</Text>
-        </Pressable>
-    );
+function Button({
+  text = "welcome",
+  buttonStyle,
+  textStyle,
+  icon,
+  iconRight = false,
+}) {
+  return (
+    <Pressable style={buttonStyle}>
+      {!iconRight && icon}
+      <Text style={textStyle}>{text}</Text>
+      {iconRight && icon}
+    </Pressable>
+  );
 }
 
 export default Button;
