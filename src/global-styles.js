@@ -1,15 +1,8 @@
 import {useHeaderHeight} from "@react-navigation/elements";
 
 export const rootContainer = {
-    height: '100vh',
-    width: '100%',
-    padding: '16px',
-}
-
-export const appView = {
-    height: `100%`,
-    backgroundColor: 'transparent',
-    // height:
+    height: '100%',
+    position: 'relative',
 }
 
 export const colors = {
