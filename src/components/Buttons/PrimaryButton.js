@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components/native";
 
-function PrimaryButton({ text = "welcome" }) {
+function PrimaryButton({ text = "welcome", onPress }) {
   return (
-    <StyledPressable>
+    <StyledPressable onPress={onPress}>
       <StyledText>{text}</StyledText>
     </StyledPressable>
   );
