@@ -1,9 +1,10 @@
 import React, { useContext } from "react";
-import { Text, View, TextInput, Button, StyleSheet } from "react-native";
-import { useForm, Controller } from "react-hook-form";
+import { View, Button } from "react-native";
+import { useForm } from "react-hook-form";
 import { Context as AuthContext } from "../context/AuthContext";
+import PrimaryInput from "../components/Inputs/PrimaryInput";
 
-function LoginScreen(props) {
+function LoginScreen() {
   const { login } = useContext(AuthContext);
   const {
     control,
@@ -22,58 +23,23 @@ function LoginScreen(props) {
 
   return (
     <View>
-      <Text style={styles.label}>Email</Text>
-      <Controller
+      <PrimaryInput
         control={control}
-        rules={{
-          required: true,
-        }}
-        render={({ field: { onChange, onBlur, value } }) => (
-          <TextInput
-            style={styles.input}
-            onBlur={onBlur}
-            onChangeText={onChange}
-            value={value}
-          />
-        )}
-        name="email"
+        label={"Email"}
+        name={"email"}
+        errors={errors}
+        errorMessage={"Field is Required"}
       />
-      {errors.email && <Text>This is required.</Text>}
-      <Text style={styles.label}>Password</Text>
-      <Controller
+      <PrimaryInput
         control={control}
-        rules={{
-          maxLength: 100,
-        }}
-        render={({ field: { onChange, onBlur, value } }) => (
-          <TextInput
-            style={styles.input}
-            onBlur={onBlur}
-            onChangeText={onChange}
-            value={value}
-          />
-        )}
-        name="password"
+        label={"Password"}
+        name={"password"}
+        errors={errors}
+        errorMessage={"Field is Required"}
       />
-
       <Button title="Submit" onPress={handleSubmit(onSubmit)} />
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  label: {
-    color: "black",
-    margin: 20,
-    marginLeft: 0,
-  },
-  input: {
-    backgroundColor: "white",
-    borderColor: "black",
-    height: 40,
-    padding: 10,
-    borderRadius: 4,
-  },
-});
 
 export default LoginScreen;

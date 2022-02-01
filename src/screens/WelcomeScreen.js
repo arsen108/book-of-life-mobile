@@ -2,8 +2,9 @@ import React from "react";
 import { Text, View } from "react-native";
 import { LocalizationContext } from "../../App";
 import PrimaryButton from "../components/Buttons/PrimaryButton";
-import styled from "styled-components/native/dist/styled-components.native.esm";
-import { Image, ImageBackground } from "react-native";
+import styled from "styled-components/native";
+import SecondaryButton from "../components/Buttons/SecondaryButton";
+import ArrowRight from "../icons/ArrowRight";
 
 function WelcomeScreen({ navigation }) {
   const { t, locale, setLocale } = React.useContext(LocalizationContext);
@@ -15,7 +16,18 @@ function WelcomeScreen({ navigation }) {
       >
         <StyledWelcomeView>
           <StyledWelcomeWrapper>
-            <PrimaryButton text={t('getDiagnostics')}/>
+            <SecondaryButton
+              text={"Login"}
+              icon={<ArrowRight />}
+              onPress={() => {
+                navigation.navigate("Login");
+              }}
+            />
+            <SecondaryButton text={"Register"} icon={<ArrowRight />} />
+            <StyledWelcomeText>
+              {t("welcomeScreen.welcomeText")}
+            </StyledWelcomeText>
+            <PrimaryButton text={t("getDiagnostics")} />
           </StyledWelcomeWrapper>
         </StyledWelcomeView>
       </StyledImageBackground>
@@ -24,6 +36,10 @@ function WelcomeScreen({ navigation }) {
 }
 
 export default WelcomeScreen;
+
+const StyledWelcomeText = styled.Text`
+  color: white;
+`;
 
 const StyledWelcomeView = styled.View`
   height: 100%;
