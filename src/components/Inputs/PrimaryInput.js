@@ -1,22 +1,22 @@
 import React from "react";
 import { Controller } from "react-hook-form";
+import { TextInput } from 'react-native-paper';
 import styled from "styled-components/native";
 
 function PrimaryInput({name, label, control, errors, errorMessage}) {
   return (
     <>
-      <StyledInputLabel>{label}</StyledInputLabel>
       <Controller
         control={control}
         rules={{
           required: true,
         }}
-        render={({ field: { onChange, onBlur, value } }) => (
-          <StyledTextInput
-            onBlur={onBlur}
-            onChangeText={onChange}
-            value={value}
-          />
+        render={({ field: { onChange, value } }) => (
+            <TextInput
+                label={label}
+                value={value}
+                onChangeText={onChange}
+            />
         )}
         name={name}
       />
