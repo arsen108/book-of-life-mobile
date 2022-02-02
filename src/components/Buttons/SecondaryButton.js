@@ -15,8 +15,17 @@ export default SecondaryButton;
 const StyledPressable = styled.Pressable`
   display: flex;
   flex-direction: row;
+  align-items: center;
+  margin-top: 36px;
 `;
 
 const StyledText = styled.Text`
-  color: #dcbf8f;
+  margin-left: 18.4px;
+
+  color: #dbbd8d;
+
+  font-size: 16px;
+  font-weight: 400;
+  text-transform: capitalize;
+  line-height: 19.5px;
 `;
