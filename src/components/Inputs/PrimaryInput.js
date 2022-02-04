@@ -16,6 +16,7 @@ function PrimaryInput({name, label, control, errors, errorMessage}) {
                 label={label}
                 value={value}
                 onChangeText={onChange}
+                mode='outlined'
             />
         )}
         name={name}
