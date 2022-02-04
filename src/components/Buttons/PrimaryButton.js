@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components/native";
 
-function PrimaryButton({ text = "welcome", onPress }) {
+function PrimaryButton({ text = "welcome", onPress , marginTop}) {
   return (
-    <StyledPressable onPress={onPress}>
+    <StyledPressable marginTop={marginTop} onPress={onPress}>
       <StyledText>{text}</StyledText>
     </StyledPressable>
   );
@@ -17,6 +17,7 @@ const StyledPressable = styled.Pressable`
   padding-bottom: 11px;
   margin-right: auto;
   margin-left: auto;
+  margin-top: ${props => props.marginTop || "0"};
 
   font-size: 16px;
   line-height: 19.5px;

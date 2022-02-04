@@ -56,6 +56,7 @@ const StyledImageBackground = styled.ImageBackground`
 
 const StyledWelcomeText = styled.Text`
   width: 100%;
+  margin-top: 65px;
   margin-bottom: 24px;
 
   color: #FFFFFF;
