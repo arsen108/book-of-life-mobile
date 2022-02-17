@@ -5,4 +5,9 @@ export default {
   welcomeScreen: {
     welcomeText: "Диагностика с автоматической регистрацией",
   },
+  loginScreen: {
+    title: "Войти",
+    emailLabel: "Адрес электронной почты",
+    passwordLabel: "Пароль",
+  }
 };

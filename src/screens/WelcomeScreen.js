@@ -37,7 +37,6 @@ function WelcomeScreen({ navigation }) {
 
 export default WelcomeScreen;
 
-
 const StyledWelcomeView = styled.View`
   height: 100%;
   width: 100%;
@@ -59,10 +58,10 @@ const StyledWelcomeText = styled.Text`
   margin-top: 65px;
   margin-bottom: 24px;
 
-  color: #FFFFFF;
+  color: #ffffff;
 
   font-size: 28px;
   line-height: 34.13px;
   text-align: center;
   font-weight: 400;
-`
+`;

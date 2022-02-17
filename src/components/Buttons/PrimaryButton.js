@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components/native";
 
-function PrimaryButton({ text = "welcome", onPress , marginTop}) {
+function PrimaryButton({ text, onPress , marginTop}) {
   return (
     <StyledPressable marginTop={marginTop} onPress={onPress}>
       <StyledText>{text}</StyledText>
