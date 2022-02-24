@@ -21,4 +21,19 @@ export default {
     pickDate: "Pick a Date",
     nextButton: "Continue",
   },
+  confirmWizardScreen: {
+    title: "Check your personal information",
+    submitButton: "Get your diagnostics",
+  },
+  homeScreen: {
+    items: {
+      hiddenQualities: "Your hidden qualities",
+      personalGift: "Your personal gift",
+      hiddenAbilities: "Your hidden abilities",
+      destination: "Your destination",
+      business: "Your business",
+      perspectives: "Your perspectives",
+      individualProgram: "Your individual program",
+    },
+  },
 };

@@ -49,3 +49,7 @@ export const getBirthdateWizardScreenOptions = () => ({
 export const getConfirmWizardScreenOptions = () => ({
   headerBackVisible: true,
 });
+
+export const getHomeScreenOptions = () => ({
+  headerBackVisible: true,
+});

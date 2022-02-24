@@ -1,15 +1,15 @@
 import React, { useContext } from "react";
-import { View, Button, KeyboardAvoidingView } from "react-native";
+import { Platform, KeyboardAvoidingView } from "react-native";
 import { useForm } from "react-hook-form";
 import { Context as AuthContext } from "../context/AuthContext";
 import PrimaryInput from "../components/Inputs/PrimaryInput";
-import styled from "styled-components/native/dist/styled-components.native.esm";
+import styled from "styled-components/native";
 import PrimaryButton from "../components/Buttons/PrimaryButton";
 import { LocalizationContext } from "../../App";
 import GoogleIcon from "../icons/GoogleIcon";
 import FacebookIcon from "../icons/FacebooIcon";
 
-function LoginScreen({navigation}) {
+function LoginScreen({ navigation }) {
   const { t } = React.useContext(LocalizationContext);
   const { login } = useContext(AuthContext);
   const {
@@ -25,19 +25,19 @@ function LoginScreen({navigation}) {
 
   const onSubmit = (data) => {
     // login(data);
-    navigation.push('NameWizard')
+    navigation.push("NameWizard");
   };
 
   return (
-    <KeyboardAvoidingView
-      behavior={Platform.OS === "ios" ? "position" : "position"}
+    <StyledImageBackground
+      source={require("../../assets/Fortuna.jpg")}
+      resizeMode="cover"
     >
-      <StyledImageBackground
-        source={require("../../assets/Fortuna.jpg")}
-        resizeMode="cover"
-      >
-        <StyledLoginView>
-          <StyledLoginWrapper>
+      <StyledLoginView>
+        <StyledLoginWrapper>
+          <KeyboardAvoidingView
+            behavior={Platform.OS === "ios" ? "padding" : "height"}
+          >
             <StyledLoginText>{t("loginScreen.title")}</StyledLoginText>
             <PrimaryInput
               control={control}
@@ -59,15 +59,15 @@ function LoginScreen({navigation}) {
               text={t("login")}
               onPress={handleSubmit(onSubmit)}
             />
-          </StyledLoginWrapper>
-          <StyledSocialWrapper>
-            <GoogleIcon />
-            <StyledSpace />
-            <FacebookIcon />
-          </StyledSocialWrapper>
-        </StyledLoginView>
-      </StyledImageBackground>
-    </KeyboardAvoidingView>
+          </KeyboardAvoidingView>
+        </StyledLoginWrapper>
+        <StyledSocialWrapper>
+          <GoogleIcon />
+          <StyledSpace />
+          <FacebookIcon />
+        </StyledSocialWrapper>
+      </StyledLoginView>
+    </StyledImageBackground>
   );
 }
 

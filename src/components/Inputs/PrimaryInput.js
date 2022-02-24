@@ -2,6 +2,7 @@ import React from "react";
 import { Controller } from "react-hook-form";
 import { TextInput } from "react-native-paper";
 import styled from "styled-components/native";
+import {colors} from "../../global-styles";
 
 function PrimaryInput({
   name,
@@ -26,7 +27,7 @@ function PrimaryInput({
               onChangeText={onChange}
               mode="outlined"
               outlineColor="#808080"
-              activeOutlineColor="#DCBF8F"
+              activeOutlineColor={colors.primary}
               // style={{backgroundColor: 'transparent'}}
               theme={{
                 colors: {

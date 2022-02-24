@@ -15,7 +15,7 @@ function WelcomeScreen({ navigation }) {
         resizeMode="cover"
       >
         <StyledWelcomeView>
-          <StyledWelcomeWrapper>
+          <StyledTopMargin>
             <SecondaryButton
               text={"Login"}
               icon={<ArrowRight />}
@@ -28,7 +28,7 @@ function WelcomeScreen({ navigation }) {
               {t("welcomeScreen.welcomeText")}
             </StyledWelcomeText>
             <PrimaryButton text={t("getDiagnostics")} />
-          </StyledWelcomeWrapper>
+          </StyledTopMargin>
         </StyledWelcomeView>
       </StyledImageBackground>
     </>
@@ -43,7 +43,7 @@ const StyledWelcomeView = styled.View`
   padding: 16px;
 `;
 
-const StyledWelcomeWrapper = styled.View`
+const StyledTopMargin = styled.View`
   margin-top: auto;
 `;
 
@@ -60,7 +60,7 @@ const StyledWelcomeText = styled.Text`
 
   color: #ffffff;
 
-  font-size: 28px;
+  font-size: 100%;
   line-height: 34.13px;
   text-align: center;
   font-weight: 400;
