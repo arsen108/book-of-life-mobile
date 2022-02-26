@@ -12,7 +12,7 @@ export const getWelcomeScreenOptions = () => ({
   },
 });
 
-export const getLoginScreenOptions = (navigation) => {
+export const getLoginScreenOptions = (navigation, title, route) => {
   const StyledHeaderTitle = styled.Text`
     font-size: 16px;
     margin-right: 10px;
@@ -22,9 +22,9 @@ export const getLoginScreenOptions = (navigation) => {
   return {
     headerRight: () => (
       <Pressable onPress={()=> {
-        navigation.navigate('Welcome')
+        navigation.navigate(route)
       }}>
-        <StyledHeaderTitle>Login</StyledHeaderTitle>
+        <StyledHeaderTitle>{title}</StyledHeaderTitle>
       </Pressable>
     ),
     headerTransparent: true,

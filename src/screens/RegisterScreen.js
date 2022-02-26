@@ -1,18 +1,14 @@
-import React, { useContext } from "react";
-import { Platform, KeyboardAvoidingView } from "react-native";
-import { useForm } from "react-hook-form";
-import { Context as AuthContext } from "../context/AuthContext";
+import React, { useContext } from 'react';
+import LoginContainer from "../conatiners/LoginContainer/LoginContainer";
 import PrimaryInput from "../components/Inputs/PrimaryInput";
-import styled from "styled-components/native";
 import PrimaryButton from "../components/Buttons/PrimaryButton";
 import { LocalizationContext } from "../../App";
-import GoogleIcon from "../icons/GoogleIcon";
-import FacebookIcon from "../icons/FacebooIcon";
-import LoginContainer from "../conatiners/LoginContainer/LoginContainer";
+import { Context as AuthContext } from "../context/AuthContext";
+import { useForm } from "react-hook-form";
 
-function LoginScreen({navigation}) {
+function RegisterScreen(props) {
     const {t} = React.useContext(LocalizationContext);
-    const {login} = useContext(AuthContext);
+    const {register} = useContext(AuthContext);
     const {
         control,
         handleSubmit,
@@ -26,22 +22,22 @@ function LoginScreen({navigation}) {
 
     const onSubmit = (data) => {
         console.log('CHECK')
-        login(data);
+        register(data);
         // navigation.push("NameWizard");
     };
 
     return (
-        <LoginContainer title={t("loginScreen.title")}>
+        <LoginContainer title={t("registerScreen.title")}>
             <PrimaryInput
                 control={control}
-                label={t("loginScreen.emailLabel")}
+                label={t("registerScreen.emailLabel")}
                 name={"email"}
                 errors={errors}
                 errorMessage={"Field is Required"}
             />
             <PrimaryInput
                 control={control}
-                label={t("loginScreen.passwordLabel")}
+                label={t("registerScreen.passwordLabel")}
                 name={"password"}
                 errors={errors}
                 errorMessage={"Field is Required"}
@@ -56,4 +52,4 @@ function LoginScreen({navigation}) {
     );
 }
 
-export default LoginScreen;
+export default RegisterScreen;

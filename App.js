@@ -19,6 +19,9 @@ import NameWizardScreen from "./src/screens/NameWizardScreen";
 import BirthdateWizardScreen from "./src/screens/BirthdateWizardScreen";
 import ConfirmWizardScreen from "./src/screens/ConfirmWizardScreen";
 import HomeScreen from "./src/screens/HomeScreen";
+import RegisterScreen from "./src/screens/RegisterScreen";
+import { ActivityIndicator } from "react-native";
+import { colors } from "./src/global-styles";
 
 i18n.translations = { en, ru };
 i18n.fallbacks = true;
@@ -50,7 +53,8 @@ export default function App() {
     <LocalizationContext.Provider value={localizationContext}>
       <AuthProvider>
         <NavigationContainer theme={BookOfLifeTheme}>
-          <Stack.Navigator initialRouteName="ConfirmWizard">
+          <Stack.Navigator initialRouteName="Welcome">
+            {/*<ActivityIndicator size='large' color={colors.primary}/>*/}
             <Stack.Screen
               name="Welcome"
               component={WelcomeScreen}
@@ -60,8 +64,15 @@ export default function App() {
               name="Login"
               component={LoginScreen}
               options={({ navigation }) => {
-                return getLoginScreenOptions(navigation);
+                return getLoginScreenOptions(navigation, 'Sign Up', "Register");
               }}
+            />
+            <Stack.Screen
+                name="Register"
+                component={RegisterScreen}
+                options={({ navigation }) => {
+                  return getLoginScreenOptions(navigation, 'Login', 'Login');
+                }}
             />
             <Stack.Screen
               name="NameWizard"

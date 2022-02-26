@@ -10,10 +10,16 @@ export default {
     emailLabel: "Email",
     passwordLabel: "Password",
   },
+  registerScreen: {
+    title: "Sign Up",
+    emailLabel: "Email",
+    passwordLabel: "Password",
+  },
   nameWizardScreen: {
     firstNameLabel: "First Name",
     lastNameLabel: "Last Name",
     fatherNameLabel: "Father's Name",
+    emailLabel: "Email",
     nextButton: "Continue",
   },
   birthdateWizardScreen: {

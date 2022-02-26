@@ -6,33 +6,42 @@ import styled from "styled-components/native";
 import SecondaryButton from "../components/Buttons/SecondaryButton";
 import ArrowRight from "../icons/ArrowRight";
 
-function WelcomeScreen({ navigation }) {
-  const { t, locale, setLocale } = React.useContext(LocalizationContext);
-  return (
-    <>
-      <StyledImageBackground
-        source={require("../../assets/Fortuna.jpg")}
-        resizeMode="cover"
-      >
-        <StyledWelcomeView>
-          <StyledTopMargin>
-            <SecondaryButton
-              text={"Login"}
-              icon={<ArrowRight />}
-              onPress={() => {
-                navigation.navigate("Login");
-              }}
-            />
-            <SecondaryButton text={"Register"} icon={<ArrowRight />} />
-            <StyledWelcomeText>
-              {t("welcomeScreen.welcomeText")}
-            </StyledWelcomeText>
-            <PrimaryButton text={t("getDiagnostics")} />
-          </StyledTopMargin>
-        </StyledWelcomeView>
-      </StyledImageBackground>
-    </>
-  );
+function WelcomeScreen({navigation}) {
+    const {t, locale, setLocale} = React.useContext(LocalizationContext);
+    return (
+        <>
+            <StyledImageBackground
+                source={require("../../assets/Fortuna.jpg")}
+                resizeMode="cover"
+            >
+                <StyledWelcomeView>
+                    <StyledTopMargin>
+                        <SecondaryButton
+                            text={"Login"}
+                            icon={<ArrowRight/>}
+                            onPress={() => {
+                                navigation.navigate("Login");
+                            }}
+                        />
+                        <SecondaryButton
+                            text={"Register"}
+                            icon={<ArrowRight/>}
+                            onPress={() => {
+                                navigation.navigate("Register");
+                            }}/>
+                        <StyledWelcomeText>
+                            {t("welcomeScreen.welcomeText")}
+                        </StyledWelcomeText>
+                        <PrimaryButton
+                            text={t("getDiagnostics")}
+                            onPress={() => {
+                                navigation.navigate("NameWizard", {withEmailInput: true});
+                            }}/>/>
+                    </StyledTopMargin>
+                </StyledWelcomeView>
+            </StyledImageBackground>
+        </>
+    );
 }
 
 export default WelcomeScreen;
